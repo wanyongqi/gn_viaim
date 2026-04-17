@@ -2,10 +2,10 @@
 
 ## 当前仓库信息
 
-- 本地仓库路径：`D:\cursorwj\GN_viaim`
+- 本地仓库路径：`D:\cursorwj\viaim-domestic`
 - 默认分支：`main`
 - 远端名称：`origin`
-- 远端地址：`https://github.com/wanyongqi/gn_viaim.git`
+- 远端地址：`https://github.com/wanyongqi/viaim-domestic.git`
 
 ## 最常用流程
 
@@ -60,7 +60,7 @@ git init
 git branch -M main
 git add .
 git commit -m "chore: initial commit"
-git remote add origin https://github.com/wanyongqi/gn_viaim.git
+git remote add origin https://github.com/wanyongqi/viaim-domestic.git
 git push -u origin main
 ```
 
