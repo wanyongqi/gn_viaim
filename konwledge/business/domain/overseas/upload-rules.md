@@ -1,5 +1,7 @@
-# 上传规则（viaim）
+# 上传规则（viaim 海外版）
 
+> **适用范围：仅海外版 App / Web**。国内版 App **不支持上传**（仅能通过录音/闪录添加内容）；国内 Web 的上传规则见 `features/viaim-domestic-web/upload-and-capacity.md`。生成国内 App 测试点时**禁止引用本文件**。
+>
 > 版本：V2.0.0 | 最后更新：2026-03
 
 ## 一、上传入口总览

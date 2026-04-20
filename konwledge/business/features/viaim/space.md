@@ -52,7 +52,7 @@ Space（空间）是记录的组织容器。可以把记录加入 Space，基于
 
 ## 三-A、添加到空间规则
 
-> 选择空间弹窗、回收站恢复优先、冲突处理、弹窗优先级等完整规则 → 详见 `domain/add-to-space-rules.md`
+> 选择空间弹窗、回收站恢复优先、冲突处理、弹窗优先级等完整规则 → 详见 `domain/overseas/add-to-space-rules.md`
 >
 > 该规则适用于所有触发"添加到空间"的场景：Record 列表左滑/批量添加、Record 上传时选择空间、Space 内添加来源、回收站恢复。
 
@@ -102,7 +102,7 @@ Space（空间）是记录的组织容器。可以把记录加入 Space，基于
 | 选择方式 | 可多选，无选择上限（受空间容量限制） |
 | 空状态 | 显示"暂无记录"图标提示 |
 
-> 选择记录确定后触发服务端冲突校验 → 详见 `domain/add-to-space-rules.md`
+> 选择记录确定后触发服务端冲突校验 → 详见 `domain/overseas/add-to-space-rules.md`
 
 ### 本地文件上传规则
 
@@ -187,7 +187,7 @@ Space（空间）是记录的组织容器。可以把记录加入 Space，基于
 - Space 数量套餐上限（Basic:10 / Pro:20 / Ultra:40）
 - 单 Space 文件套餐上限（Basic:10 / Pro/Ultra:50）
 - 未上云记录不可添加到 Space
-- 添加到空间弹窗/冲突处理/回收站恢复优先 → 详见 `domain/add-to-space-rules.md` 测试关注点
+- 添加到空间弹窗/冲突处理/回收站恢复优先 → 详见 `domain/overseas/add-to-space-rules.md` 测试关注点
 - 快捷方式置灰：原文件删除后置灰，恢复后恢复正常；置灰左滑移除不进回收站
 - 文档从 Space 删除 vs 音频移除快捷方式的行为差异
 - 删除 Space 时内部记录全部进回收站

@@ -40,7 +40,7 @@
 | 删除 | 已上云记录 | 删除到回收站 |
 | 删除 | 未上云记录 | 直接永久删除，不进回收站 |
 
-> 添加到空间的弹窗展示与冲突处理规则 → 详见 `domain/add-to-space-rules.md`
+> 添加到空间的弹窗展示与冲突处理规则 → 详见 `domain/overseas/add-to-space-rules.md`
 > 删除行为详细规则 → 详见 `domain/delete-recycle-rules.md`
 
 ---
@@ -79,7 +79,7 @@
 
 选择记录后点击添加到 → 可批量添加到单个或多个空间。仅录音记录（无转写）和未上云记录不可添加。
 
-> 添加冲突处理规则 → 详见 `domain/add-to-space-rules.md`
+> 添加冲突处理规则 → 详见 `domain/overseas/add-to-space-rules.md`
 
 ---
 
@@ -110,7 +110,7 @@
 | 添加到空间 | 可选择单个或多个空间，上传成功后在对应 Space 创建快捷方式 |
 | 转写消耗提示 | Basic/Pro 显示"将消耗 XX 分钟 / 剩余 XX 分钟"；Ultra 不显示 |
 
-> 详细上传规则（格式/大小/队列/校验/容量）→ 详见 `domain/upload-rules.md`
+> 详细上传规则（格式/大小/队列/校验/容量）→ 详见 `domain/overseas/upload-rules.md`
 
 ---
 

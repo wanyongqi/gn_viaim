@@ -18,16 +18,21 @@ konwledge/
 │   │       └── glossary.md               ✅ 术语表（记录/上云/空间/闪录等）
 │   │
 │   ├── domain/                            # 领域规则层（跨模块共用规则）
-│   │   ├── record-common-rules.md        ✅ 记录通用规则（类型/来源/状态/卡片显示/排序/红点/时间格式）
-│   │   ├── subscription.md               ✅ 套餐权益 + 转写时长扣除 + AI模型权限 + 降级行为 + 升级弹窗
-│   │   ├── viaim-domestic.md             ✅ 国内版专属规则（云空间开/关、无套餐层级、AI权限）
-│   │   ├── upload-rules.md               ✅ 上传入口、格式、限制、流程、空间容量占用、校验优先级
-│   │   ├── add-to-space-rules.md         ✅ 添加到空间弹窗（冲突处理/回收站恢复优先/容量校验）
-│   │   ├── delete-recycle-rules.md       ✅ 删除行为与回收站规则（保留30天）
-│   │   ├── export-rules.md               ✅ 导出入口、格式差异（详情页 vs 批量）
-│   │   ├── language-selection.md         ✅ 语言选择弹窗（入口/单多语言/搜索/同步/付费）
-│   │   ├── common-interaction.md         ✅ 通用交互规则（弹窗关闭/按钮状态/防重复提交）
-│   │   └── version-migration.md          ✅ 新老版本数据同步（分组→空间/祖父条款/示例空间）
+│   │   ├── common-interaction.md         ✅ 通用交互规则（全平台通用：弹窗关闭/按钮/防重复）
+│   │   ├── record-common-rules.md        ✅ 记录通用规则（主基线海外版，含国内差异补充节）
+│   │   ├── delete-recycle-rules.md       ✅ 删除行为与回收站（主基线海外版，含国内差异补充节）
+│   │   ├── export-rules.md               ✅ 导出规则（主基线海外版，含国内差异补充节）
+│   │   ├── language-selection.md         ✅ 语言选择弹窗（主基线海外版，含国内差异补充节）
+│   │   │
+│   │   ├── overseas/                     # 仅海外版适用
+│   │   │   ├── subscription.md           ✅ 套餐权益（Basic/Pro/Ultra + 转写时长 + AI权限）
+│   │   │   ├── upload-rules.md           ✅ 上传入口/格式/限制/空间容量占用/校验优先级
+│   │   │   ├── add-to-space-rules.md     ✅ 添加到空间弹窗（冲突/回收站恢复优先/容量校验）
+│   │   │   └── version-migration.md      ✅ 新老版本数据同步（分组→空间/祖父条款）
+│   │   │
+│   │   └── domestic/                     # 仅国内版适用
+│   │       ├── overview.md               ✅ 国内版全局专属规则（无套餐/无Space/仅中英/仅深色）
+│   │       └── cloud-storage-toggle.md   🔲 云空间开关完整规则（开/关状态影响矩阵、容量）
 │   │
 │   ├── features/                          # 功能规格层（单功能一文档）
 │   │   ├── viaim/                         # 海外版 App（iOS / Android）功能规格
@@ -57,12 +62,16 @@ konwledge/
 │   │   │   │   ├── README.md            ✅ 入口总览：类型/耳机/功能矩阵/通用概览
 │   │   │   │   ├── common-rules.md      ✅ 通用规则：说话人/标记/暂停/保存/悬浮窗/画中画
 │   │   │   │   ├── call.md              ✅ 通话录音专属：静音/安心录/双路/佩戴提示
-│   │   │   │   ├── translate.md         ✅ 实时翻译与录音专属：UI/语种（仅中英）/播报/权限
+│   │   │   │   ├── translate.md         ✅ 同传听译（= 实时翻译与录音）：UI/语种35种/播报/权限
 │   │   │   │   └── text-live.md         ✅ 文字直播 H5
+│   │   │   ├── translation/                 🆕 3大翻译（国内专属，海外无）
+│   │   │   │   ├── README.md            ✅ 总览：对比矩阵/共用规则/入口
+│   │   │   │   ├── face-to-face-translation.md ✅ 面对面翻译（33种语言/首次引导/角色分工UI）
+│   │   │   │   └── call-translation.md  ✅ 通话翻译（35种/双耳必戴/左耳原声+右耳嘴替/设置弹窗）
 │   │   │   ├── flash-record.md           ✅ 闪录与下载（模式/触发/时长上限）
 │   │   │   ├── record-list.md            ✅ 录音记录列表（筛选/左滑/批量，无上传入口）
-│   │   │   ├── home.md                   🔲 首页（待补充内容）
-│   │   │   ├── discover.md               🔲 发现页（待补充内容）
+│   │   │   ├── home.md                   ✅ 首页（未/已连接耳机两态、4快捷入口、录音弹窗2Tab、运营位）
+│   │   │   ├── discover.md               ✅ 发现页（2×2快捷入口/运营位/放松音乐，多由后台配置）
 │   │   │   ├── wanmu-vitana.md           ✅ 万姆/Vitana AI 助理（名称/入口/引用范围/对话）
 │   │   │   ├── detail-page.md            ✅ 详情页（两种类型/各Tab功能，无文档类型）
 │   │   │   ├── bluetooth-headset.md      ✅ 耳机型号与设置（型号差异、功能规格）
@@ -99,10 +108,13 @@ konwledge/
 │   │       └── upload-and-capacity.md    ✅ 上传与容量
 │   │
 │   ├── reference-data/                    # 参考数据
-│   │   └── viaim/
-│   │       ├── transcribe.csv            ✅ 转写语种列表（145种，含变体、优先级）
-│   │       ├── translate.csv             ✅ 翻译语种列表（80种，无变体）
-│   │       └── 预制模版.csv              ✅ 摘要预制模版数据
+│   │   ├── viaim/
+│   │   │   ├── transcribe.csv            ✅ 海外转写语种（145种，含变体、优先级）
+│   │   │   ├── translate.csv             ✅ 海外翻译语种（80种，无变体）
+│   │   │   └── 预制模版.csv              ✅ 摘要预制模版数据
+│   │   └── viaim-domestic/
+│   │       ├── languages.csv             ✅ 国内语种矩阵（转写46/同传35/面对面33/通话35/离线2）
+│   │       └── languages-readme.md       ✅ 字段/语种数/优先级/抽样指南
 │   │
 │   └── test-focus/                        # 测试关注点
 │       └── viaim/
@@ -120,19 +132,40 @@ konwledge/
 
 ## AI 引用速查表
 
-### 领域规则（全平台通用）
+### 领域规则
+
+> 引用前先识别测试对象所属平台（海外 App/Web vs 国内 App/Web），按下表选对应文档。
+
+**全平台通用（任何场景均可引用）**
 
 | 写什么用例 | 引用文档 |
 |----------|---------|
-| 上传音频/文档/空间容量占用/校验优先级 | `domain/upload-rules.md` |
-| 添加到空间/冲突弹窗/回收站恢复优先 | `domain/add-to-space-rules.md` |
+| 弹窗关闭方式/按钮状态/防重复提交 | `domain/common-interaction.md` |
+
+**主基线海外版、国内另有差异补充（引用时看 §"国内差异"节）**
+
+| 写什么用例 | 引用文档 |
+|----------|---------|
 | 删除/移除/回收站 | `domain/delete-recycle-rules.md` |
-| 套餐差异/升级弹窗/订阅续费/转写时长扣除/AI模型权限 | `domain/subscription.md` |
 | 导出功能 | `domain/export-rules.md` |
 | 记录卡片显示/排序/红点/类型/状态 | `domain/record-common-rules.md` |
 | 语言选择弹窗/语种切换/多语言付费 | `domain/language-selection.md` |
-| 弹窗关闭方式/按钮状态/防重复提交 | `domain/common-interaction.md` |
-| 新老版本迁移/祖父条款/分组→空间 | `domain/version-migration.md` |
+
+**仅海外版（生成国内用例时禁止引用）**
+
+| 写什么用例 | 引用文档 |
+|----------|---------|
+| 上传音频/文档/空间容量占用/校验优先级 | `domain/overseas/upload-rules.md` |
+| 添加到空间/冲突弹窗/回收站恢复优先 | `domain/overseas/add-to-space-rules.md` |
+| 套餐差异/升级弹窗/订阅续费/转写时长扣除/AI模型权限 | `domain/overseas/subscription.md` |
+| 新老版本迁移/祖父条款/分组→空间 | `domain/overseas/version-migration.md` |
+
+**仅国内版（生成海外用例时禁止引用）**
+
+| 写什么用例 | 引用文档 |
+|----------|---------|
+| 国内版专属规则/无套餐/无Space/仅中英/仅深色 | `domain/domestic/overview.md` |
+| 云空间开关状态/影响矩阵/容量规则 | `domain/domestic/cloud-storage-toggle.md` |
 
 ### App（iOS / Android）功能规格
 
@@ -181,8 +214,11 @@ konwledge/
 | 4大录音（总览）| `features/viaim-domestic/recording/README.md` |
 | 4大录音（通用规则）| `features/viaim-domestic/recording/common-rules.md` |
 | 4大录音（通话专属）| `features/viaim-domestic/recording/call.md` |
-| 4大录音（同传专属）| `features/viaim-domestic/recording/translate.md` |
+| 4大录音（同传听译）| `features/viaim-domestic/recording/translate.md` |
 | 文字直播 H5 | `features/viaim-domestic/recording/text-live.md` |
+| 🆕 3大翻译总览（对比矩阵/共用规则）| `features/viaim-domestic/translation/README.md` |
+| 🆕 面对面翻译（33种语言/国内独有）| `features/viaim-domestic/translation/face-to-face-translation.md` |
+| 🆕 通话翻译（35种语言/国内独有）| `features/viaim-domestic/translation/call-translation.md` |
 | 闪录 | `features/viaim-domestic/flash-record.md` |
 | 录音记录列表筛选/左滑/批量 | `features/viaim-domestic/record-list.md` |
 | 首页 | `features/viaim-domestic/home.md` |
@@ -197,7 +233,8 @@ konwledge/
 | 小组件（悬浮窗/通知栏/灵动岛）| `features/viaim-domestic/widget.md` |
 | 全局搜索（国内App）| `features/viaim-domestic/search.md` |
 | 消息中心（国内App）| `features/viaim-domestic/message-center.md` |
-| 国内版专属规则/云空间 | `domain/viaim-domestic.md` |
+| 国内版专属规则（无套餐/无Space/仅中英/仅深色）| `domain/domestic/overview.md` |
+| 云空间开关状态/影响矩阵/容量 | `domain/domestic/cloud-storage-toggle.md` |
 
 ### 国内 Web 端功能规格
 
@@ -217,11 +254,16 @@ konwledge/
 
 | 写什么用例 | 引用文档 |
 |----------|---------|
-| 转写语种数据（145种） | `reference-data/viaim/transcribe.csv` |
-| 翻译语种数据（80种） | `reference-data/viaim/translate.csv` |
+| 转写语种数据（海外 145种） | `reference-data/viaim/transcribe.csv` |
+| 翻译语种数据（海外 80种） | `reference-data/viaim/translate.csv` |
 | 预制模版数据 | `reference-data/viaim/预制模版.csv` |
+| 🆕 国内语种矩阵（转写46/同传35/面对面33/通话35/离线2）| `reference-data/viaim-domestic/languages.csv` |
+| 🆕 国内语种字段/优先级/抽样指南 | `reference-data/viaim-domestic/languages-readme.md` |
 | 典型缺陷模式（错误推测法） | `test-focus/viaim/typical-defects.md` |
 | 高质量测试点样例 | `test-focus/viaim/testpoint-examples.md` |
+
+> 国内语种相关输出（转写/翻译语种数、优先级、抽样策略）必须**同时引用**：
+> `reference-data/viaim-domestic/languages.csv` + `reference-data/viaim-domestic/languages-readme.md`
 
 ---
 
@@ -237,9 +279,7 @@ konwledge/
 | `test-focus/viaim/regression-focus.md` | 回归关注点 | ⭐⭐⭐ |
 | `test-focus/viaim/risky-scenarios.md` | 高风险场景清单 | ⭐⭐⭐ |
 | `test-focus/viaim/platform-diff.md` | Android / iOS / Web 差异汇总 | ⭐⭐⭐ |
-| `features/viaim-domestic/home.md` | 首页功能规格（待补充内容）| ⭐⭐⭐ |
-| `features/viaim-domestic/discover.md` | 发现页功能规格（待补充内容）| ⭐⭐⭐ |
 | `features/viaim-domestic/my-preferences.md` AI模型列表 | 国内版 AI 模型具体型号待确认 | ⭐⭐⭐ |
 | `features/viaim-domestic/wanmu-vitana.md` AI模型权限 | 国内版 AI 模型权限规则待确认 | ⭐⭐⭐ |
-| `domain/viaim-domestic.md` 容量规则 | 云存储容量额度及满容量限制待确认 | ⭐⭐ |
+| `domain/domestic/cloud-storage-toggle.md` 容量规则 | 云存储容量额度及满容量限制待确认 | ⭐⭐ |
 | `features/viaim-domestic/message-center.md` 消息类型 | 国内版消息类型详细内容待补充 | ⭐⭐ |

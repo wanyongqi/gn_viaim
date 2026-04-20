@@ -212,7 +212,7 @@
 | 退出重新登录 | 显示"正在同步记录"页面，同步成功后展示记录 |
 | 登录状态下升级安装 App | 不显示同步页面，直接展示记录列表 |
 
-> 老版本用户首次登录 2.0 的迁移规则 → 详见 `domain/version-migration.md`
+> 老版本用户首次登录 2.0 的迁移规则 → 详见 `domain/overseas/version-migration.md`
 
 ---
 

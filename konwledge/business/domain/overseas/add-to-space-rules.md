@@ -1,5 +1,7 @@
-# 添加到空间规则（viaim）
+# 添加到空间规则（viaim 海外版）
 
+> **适用范围：仅海外版 App**。国内版 App **无 Space 功能**，本文件规则完全不适用；国内 Web 的「分组」概念另见 `features/viaim-domestic-web/space-grouping.md`。生成国内 App 测试点时**禁止引用本文件**。
+>
 > 版本：V2.0.0 | 最后更新：2026-03
 > 适用场景：Record 列表左滑/批量添加、Record 上传时选择空间、Space 内添加来源、回收站恢复（含原 Space 已删除时弹 Space 选择弹窗）
 > 校验方式：服务端校验返回结果，客户端展示对应弹窗

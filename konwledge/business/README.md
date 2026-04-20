@@ -1,6 +1,6 @@
 # 业务知识库说明（viaim）
 
-> 版本：V2.1.0 | 最后更新：2026-04
+> 版本：V2.2.0 | 最后更新：2026-04
 
 本目录沉淀 viaim 产品的业务规则、功能规格与测试参考数据，供测试人员查阅和 AI 生成测试内容时引用。
 
@@ -17,15 +17,19 @@ business/
 │       └── glossary.md               # 术语表（记录/上云/空间/闪录等）
 │
 ├── domain/                            # 领域规则层：跨模块共用的业务规则
-│   ├── record-common-rules.md        # 记录通用规则（类型/来源/状态/卡片显示/排序/红点）
-│   ├── subscription.md               # 套餐权益（Basic/Pro/Ultra 对比）
-│   ├── upload-rules.md               # 上传入口、支持格式、限制、处理流程
-│   ├── add-to-space-rules.md         # 添加到空间弹窗规则（冲突处理/回收站恢复优先/容量校验）
-│   ├── delete-recycle-rules.md       # 删除行为、移除与删除区别、回收站规则
-│   ├── export-rules.md               # 导出入口、格式差异（详情页 vs 批量）
-│   ├── language-selection.md         # 语言选择弹窗（入口/单多语言/搜索/同步/付费）
-│   ├── common-interaction.md         # 通用交互规则（弹窗关闭/按钮状态/防重复提交）
-│   └── version-migration.md          # 新老版本数据同步（分组→空间迁移/祖父条款/示例空间）
+│   ├── common-interaction.md         # 通用交互规则（全平台通用：弹窗关闭/按钮/防重复）
+│   ├── record-common-rules.md        # 记录通用规则（海外主基线 + 国内差异节）
+│   ├── delete-recycle-rules.md       # 删除/回收站（海外主基线 + 国内差异节）
+│   ├── export-rules.md               # 导出规则（海外主基线 + 国内差异节）
+│   ├── language-selection.md         # 语言选择弹窗（海外主基线 + 国内差异节）
+│   ├── overseas/                     # 仅海外版适用
+│   │   ├── subscription.md           # 套餐权益（Basic/Pro/Ultra）
+│   │   ├── upload-rules.md           # 上传入口/格式/限制/空间容量占用
+│   │   ├── add-to-space-rules.md     # 添加到空间弹窗（冲突/回收站恢复优先/容量）
+│   │   └── version-migration.md      # 新老版本数据同步（分组→空间/祖父条款）
+│   └── domestic/                     # 仅国内版适用
+│       ├── overview.md               # 国内版全局专属规则（无套餐/无Space/仅中英/仅深色）
+│       └── cloud-storage-toggle.md   # 云空间开关完整规则（开/关状态影响矩阵、容量）
 │
 ├── features/                          # 功能规格层：单功能一文档
 │   ├── viaim/                         # App（iOS / Android）功能规格
@@ -49,6 +53,28 @@ business/
 │   │   ├── search.md                 # 全局搜索
 │   │   ├── message-center.md         # 消息中心（地区推送/有效期/未读角标）
 │   │   └── login-register.md         # 登录注册
+│   │
+│   ├── viaim-domestic/                # 国内 App 功能规格
+│   │   ├── recording/                # 4大录音（与海外同 4 类）
+│   │   ├── translation/              # 🆕 3大翻译（同传/面对面/通话；国内专属）
+│   │   │   ├── README.md            # 3大翻译总览（对比矩阵/共用规则）
+│   │   │   ├── face-to-face-translation.md  # 🔲 骨架：面对面翻译
+│   │   │   └── call-translation.md  # 🔲 骨架：通话翻译
+│   │   ├── flash-record.md           # 闪录
+│   │   ├── record-list.md            # 记录列表
+│   │   ├── detail-page.md            # 详情页（无文档类型）
+│   │   ├── wanmu-vitana.md           # 万姆/Vitana AI 助理
+│   │   ├── bluetooth-headset.md      # 耳机型号
+│   │   ├── bluetooth-gesture.md      # 耳机手势
+│   │   ├── bluetooth-connect.md      # 耳机连接
+│   │   ├── account-settings.md       # 账号设置
+│   │   ├── my-preferences.md         # 使用设置
+│   │   ├── widget.md                 # 小组件
+│   │   ├── search.md                 # 全局搜索
+│   │   ├── message-center.md         # 消息中心
+│   │   ├── login-register.md         # 登录注册（手机号+短信）
+│   │   ├── home.md                   # 🔲 待补充：首页
+│   │   └── discover.md               # 🔲 待补充：发现
 │   │
 │   ├── viaim-web/                     # 海外 Web 端功能规格
 │   │   ├── login.md                  # 登录
@@ -74,12 +100,15 @@ business/
 │       └── upload-and-capacity.md    # 上传与容量
 │
 ├── reference-data/                    # 参考数据：结构化数据文件 + 说明文档
-│   └── viaim/
-│       ├── transcribe.csv            # 转写语种列表（145种，含地区变体、优先级）
-│       ├── translate.csv             # 翻译语种列表（80种，无地区变体）
-│       ├── 预制模版.csv              # 摘要预制模版数据
-│       ├── 预制模版说明.md           # 🔲 待建：预制模版字段说明
-│       └── 语种说明.md              # 🔲 待建：语种字段说明
+│   ├── viaim/
+│   │   ├── transcribe.csv            # 海外转写语种（145种，含地区变体）
+│   │   ├── translate.csv             # 海外翻译语种（80种）
+│   │   ├── 预制模版.csv              # 摘要预制模版数据
+│   │   ├── 预制模版说明.md           # 🔲 待建：预制模版字段说明
+│   │   └── 语种说明.md              # 🔲 待建：语种字段说明
+│   └── viaim-domestic/
+│       ├── languages.csv             # 国内语种矩阵（转写46/同传35/面对面33/通话35/离线2）
+│       └── languages-readme.md       # 字段/语种数/优先级/抽样指南
 │
 └── test-focus/                        # 测试关注点
     └── viaim/
@@ -127,18 +156,20 @@ business/
 
 **领域规则**
 
-| 文件 | 状态 | 说明 |
-|------|------|------|
-| `product/viaim/glossary.md` | ✅ | 术语表（含双路/单路通话录音） |
-| `domain/record-common-rules.md` | ✅ | 记录通用规则（类型/来源/状态/卡片显示/排序/红点/时间格式）|
-| `domain/subscription.md` | ✅ | 套餐权益（含转写时长扣除机制、AI模型权限、降级行为、升级弹窗交互）|
-| `domain/upload-rules.md` | ✅ | 上传规则（含空间容量占用、校验优先级、多端并发服务端兜底）|
-| `domain/add-to-space-rules.md` | ✅ | 添加到空间弹窗（冲突处理/回收站恢复优先/容量校验/弹窗优先级）|
-| `domain/delete-recycle-rules.md` | ✅ | 删除与回收站（含移除弹窗勾选逻辑、置灰规则）|
-| `domain/export-rules.md` | ✅ | 导出规则（含50条上限、命名规则、进度弹窗）|
-| `domain/language-selection.md` | ✅ | 语言选择弹窗（入口/单多语言/搜索/推荐/同步/付费）|
-| `domain/common-interaction.md` | ✅ | 通用交互规则（弹窗关闭方式/按钮状态/防重复提交）|
-| `domain/version-migration.md` | ✅ | 新老版本数据同步（分组→空间/祖父条款/示例空间）|
+| 文件 | 状态 | 适用平台 | 说明 |
+|------|------|---------|------|
+| `product/viaim/glossary.md` | ✅ | 全平台 | 术语表（含双路/单路通话录音） |
+| `domain/common-interaction.md` | ✅ | 全平台 | 通用交互规则（弹窗关闭/按钮状态/防重复）|
+| `domain/record-common-rules.md` | ✅ | 海外主基线 + 国内差异节 | 记录通用规则（类型/来源/状态/卡片/排序/红点）|
+| `domain/delete-recycle-rules.md` | ✅ | 海外主基线 + 国内差异节 | 删除与回收站 |
+| `domain/export-rules.md` | ✅ | 海外主基线 + 国内差异节 | 导出规则（50条上限/命名/进度弹窗）|
+| `domain/language-selection.md` | ✅ | 海外主基线 + 国内差异节 | 语言选择弹窗 |
+| `domain/overseas/subscription.md` | ✅ | 仅海外 | 套餐权益（转写时长扣除/AI权限/降级/升级弹窗）|
+| `domain/overseas/upload-rules.md` | ✅ | 仅海外 | 上传规则（空间容量占用/校验优先级）|
+| `domain/overseas/add-to-space-rules.md` | ✅ | 仅海外 | 添加到空间弹窗（冲突/回收站恢复优先）|
+| `domain/overseas/version-migration.md` | ✅ | 仅海外 | 新老版本数据同步（分组→空间/祖父条款）|
+| `domain/domestic/overview.md` | ✅ | 仅国内 | 国内版全局专属规则（无套餐/无Space/仅中英/仅深色）|
+| `domain/domestic/cloud-storage-toggle.md` | 🔲 | 仅国内 | 云空间开关规则（影响矩阵/容量/满容量行为）|
 
 **App（iOS / Android）功能规格**
 
@@ -159,6 +190,30 @@ business/
 | `features/viaim/search.md` | ✅ | 全局搜索 |
 | `features/viaim/message-center.md` | ✅ | 消息中心 |
 | `features/viaim/login-register.md` | ✅ | 登录注册 |
+
+**国内 App 功能规格**
+
+| 文件 | 状态 | 说明 |
+|------|------|------|
+| `features/viaim-domestic/recording/` | ✅ | 4大录音（README/common-rules/call/translate/text-live，同海外框架，语种范围不同）|
+| `features/viaim-domestic/translation/README.md` | ✅ | 🆕 3大翻译总览 |
+| `features/viaim-domestic/translation/face-to-face-translation.md` | ✅ | 🆕 面对面翻译（33种语言/首次引导/戴耳机免触发+持手机按钮触发/中文支持中英混合）|
+| `features/viaim-domestic/translation/call-translation.md` | ✅ | 🆕 通话翻译（双耳必戴/前置校验链/语音嘴替/左耳原声+右耳翻译助理/设置弹窗 4 项）|
+| `features/viaim-domestic/flash-record.md` | ✅ | 闪录 |
+| `features/viaim-domestic/record-list.md` | ✅ | 记录列表（无 Space 入口/无上传入口）|
+| `features/viaim-domestic/detail-page.md` | ✅ | 详情页（仅音频类型，46 种重新转写语言）|
+| `features/viaim-domestic/wanmu-vitana.md` | ✅ | 万姆/Vitana（UI 语言跟随）|
+| `features/viaim-domestic/bluetooth-headset.md` | ✅ | 耳机型号 |
+| `features/viaim-domestic/bluetooth-gesture.md` | ✅ | 耳机手势 |
+| `features/viaim-domestic/bluetooth-connect.md` | ✅ | 耳机连接 |
+| `features/viaim-domestic/account-settings.md` | ✅ | 账号设置（手机号唯一主登录/无密码/无三方）|
+| `features/viaim-domestic/my-preferences.md` | ✅ | 使用设置（UI 中英/转写 46 种）|
+| `features/viaim-domestic/widget.md` | ✅ | 小组件（转写 46 种）|
+| `features/viaim-domestic/search.md` | ✅ | 搜索 |
+| `features/viaim-domestic/message-center.md` | ✅ | 消息中心 |
+| `features/viaim-domestic/login-register.md` | ✅ | 登录注册（手机号+短信+扫码）|
+| `features/viaim-domestic/home.md` | ✅ | 首页（未/已连接两态/4快捷入口/录音弹窗2Tab/运营位）|
+| `features/viaim-domestic/discover.md` | ✅ | 发现 Tab（2×2快捷入口/运营位/放松音乐，多由后台配置）|
 
 **海外 Web 端功能规格**
 
@@ -193,11 +248,14 @@ business/
 
 | 文件 | 状态 | 说明 |
 |------|------|------|
-| `reference-data/viaim/transcribe.csv` | ✅ | 转写语种列表（145种，含变体、优先级）|
-| `reference-data/viaim/translate.csv` | ✅ | 翻译语种列表（80种，无变体）|
+| `reference-data/viaim/transcribe.csv` | ✅ | 海外转写语种（145种，含变体、优先级）|
+| `reference-data/viaim/translate.csv` | ✅ | 海外翻译语种（80种，无变体）|
 | `reference-data/viaim/预制模版.csv` | ✅ | 摘要预制模版数据 |
+| `reference-data/viaim-domestic/languages.csv` | ✅ | 🆕 国内语种矩阵（转写46/同传35/面对面33/通话35/离线2）|
+| `reference-data/viaim-domestic/languages-readme.md` | ✅ | 🆕 字段/语种数/优先级/抽样指南 |
 | `test-focus/viaim/typical-defects.md` | ✅ | 典型缺陷模式库 |
 | `test-focus/viaim/testpoint-examples.md` | ✅ | 高质量测试点样例库 |
+| `test-focus/viaim-domestic/regression-focus.md` | ✅ | 🆕 国内版回归重点（已同步 630 合并录音规则） |
 
 ### 待补充（🔲）
 
@@ -206,6 +264,11 @@ business/
 | `product/viaim/overview.md` | ⭐⭐ | 产品概述与核心模块 |
 | `product/viaim/scope.md` | ⭐⭐ | 版本与平台范围（iOS/Android/版本号）|
 | `features/viaim/message-center.md` 消息类型 | ⭐⭐⭐ | 具体消息类型详细内容 |
+| `features/viaim-domestic/home.md` | ⭐⭐⭐ | 国内版首页 Tab 内容 |
+| `features/viaim-domestic/discover.md` | ⭐⭐⭐ | 国内版发现 Tab 内容 |
+| `features/viaim-domestic/translation/face-to-face-translation.md` | ⭐⭐⭐ | 面对面翻译完整规格（UI/交互/收音/记录归属）|
+| `features/viaim-domestic/translation/call-translation.md` | ⭐⭐⭐ | 通话翻译完整规格（与通话录音关系/播出方向）|
+| `domain/domestic/cloud-storage-toggle.md` ⚠️ 待确认项 | ⭐⭐⭐ | 默认值/本地转写/容量/降级细节 |
 | `reference-data/viaim/预制模版说明.md` | ⭐⭐ | 预制模版字段含义与使用方式 |
 | `reference-data/viaim/语种说明.md` | ⭐⭐ | 语种字段说明 |
 | `test-focus/viaim/regression-focus.md` | ⭐⭐⭐ | 回归测试关注点 |
@@ -236,21 +299,28 @@ business/
 | 4 | `reference-data/` | 需要具体数据时（语种列表/模版数据）|
 | 5 | `test-focus/` | 风险识别与回归策略 |
 
-**生成前必读**：
-- 套餐差异 → 必读 `domain/subscription.md`
-- 涉及添加到空间/冲突弹窗/回收站恢复优先 → 必读 `domain/add-to-space-rules.md`
-- 涉及删除/移除 → 必读 `domain/delete-recycle-rules.md`
-- 涉及导出 → 必读 `domain/export-rules.md`
-- 涉及记录卡片显示/排序/红点/类型/状态 → 必读 `domain/record-common-rules.md`
-- 涉及记录列表筛选/左滑/批量/上传入口 → 必读 `features/viaim/record-list.md`
-- 涉及 Space → 必读 `features/viaim/space.md`
-- 涉及 Vitana AI 助理 → 必读 `features/viaim/vitana.md`
-- 涉及语言选择/语种切换/多语言付费 → 必读 `domain/language-selection.md`
-- 涉及新老版本迁移/祖父条款 → 必读 `domain/version-migration.md`
-- 涉及转写时长扣除/返还/AI模型权限 → 必读 `domain/subscription.md`（第四、五、六节）
-- 涉及上传时空间容量占用/校验优先级 → 必读 `domain/upload-rules.md`（第八、九、十节）
-- 涉及录音功能 → 必读 `features/viaim/recording/README.md`（入口），按需读 `common-rules.md`、`call.md`、`translate.md`
-- 涉及文字直播 H5 → 必读 `features/viaim/recording/text-live.md`
-- 涉及耳机型号/设置差异 → 必读 `features/viaim/bluetooth-headset.md`
-- 涉及耳机手势控制/键值配置 → 必读 `features/viaim/bluetooth-gesture.md`
-- 涉及耳机连接流程/权限/复连 → 必读 `features/viaim/bluetooth-connect.md`
+**生成前必读（按测试对象平台选择）**：
+
+### 海外版 App / Web 测试用例
+- 套餐差异 → `domain/overseas/subscription.md`
+- 添加到空间/冲突弹窗/回收站恢复优先 → `domain/overseas/add-to-space-rules.md`
+- 上传规则/空间容量/校验优先级 → `domain/overseas/upload-rules.md`
+- 新老版本迁移/祖父条款 → `domain/overseas/version-migration.md`
+- 删除/移除 → `domain/delete-recycle-rules.md`
+- 导出/记录卡片/语言选择 → `domain/export-rules.md` / `domain/record-common-rules.md` / `domain/language-selection.md`
+- 录音/详情页/Space/Vitana 等功能 → 对应 `features/viaim/*.md`
+
+### 国内版 App 测试用例
+- **禁止引用** `domain/overseas/*` 下任何文件
+- 国内版全局规则 → `domain/domestic/overview.md`（**必读**）
+- 云空间开关/容量/影响矩阵 → `domain/domestic/cloud-storage-toggle.md`（**必读**）
+- 删除/导出/记录/语言选择 → 读 `domain/*.md` 时**仅取 §国内差异节**，忽略海外套餐/Space 相关条款
+- 功能规格 → 对应 `features/viaim-domestic/*.md`
+- **语种相关**：必引 `reference-data/viaim-domestic/languages.csv` + `languages-readme.md`（不要用 `reference-data/viaim/transcribe.csv`）
+- **3 大翻译**：先读 `features/viaim-domestic/translation/README.md`（总览），再读对应子文件
+- **AI 助理名称**：中/英 UI 对应万姆/Vitana，不要混用
+
+### 国内版 Web 测试用例
+- **禁止引用** `domain/overseas/upload-rules.md`（国内 Web 上传容量规则完全不同）
+- 国内 Web 上传/容量 → `features/viaim-domestic-web/upload-and-capacity.md`
+- 国内 Web 其他模块 → `features/viaim-domestic-web/*.md`
