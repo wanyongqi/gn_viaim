@@ -15,6 +15,8 @@ viaim-domestic/
 │   ├── workbench/
 │   │   ├── 测试用例复查优化.md      # 复查优化参考文档
 │   │   └── 测试用例格式样例.md      # 格式示例文档
+│   ├── templates/
+│   │   └── 测试报告_国内viaim_V6.3.0.docx  # 完整测试报告格式模板
 │   └── source-data/
 │       ├── 语种优先级_可读版.md     # 语种覆盖优先级参考
 │       ├── 语种优先级.xlsx          # 语种优先级源表格
@@ -30,8 +32,7 @@ viaim-domestic/
 │       ├── 630简约版测试点.md       # 测试报告功能点文档
 │       ├── 630现网包验证重点.md     # 现网包验证清单
 │       ├── 630测试知识库.md
-│       ├── iFLYBUDS--xxxx-xx-xx.xlsx  # 缺陷导出表格（scripts/parse_bugs.py 直接读取）
-│       └── 测试报告_国内viaim_V6.3.0.docx  # 完整测试报告（格式基准）
+│       └── iFLYBUDS--xxxx-xx-xx.xlsx  # 缺陷导出表格（scripts/parse_bugs.py 直接读取）
 └── .cursor/
     ├── rules/                  # AI 行为规范（@ 引用触发）
     │   ├── 00-language.mdc     # 全局语言设置（自动生效）
@@ -48,6 +49,15 @@ viaim-domestic/
         ├── production-verification/         # 现网验证技能
         └── test-report-generation/          # 完整测试报告生成技能
 ```
+
+### 目录归类约定
+
+- `docs/`：存放跨版本长期复用的规范、模板、参考资料，不作为单个迭代的交付目录。
+- `docs/templates/`：存放固定格式模板文件，如测试报告 `.docx`；模板来源版本保留在文件名中，但物理位置统一放在这里。
+- `docs/source-data/`：存放语种、覆盖范围等源数据文件及其可读化副本。
+- `docs/workbench/`：存放辅助 AI 输出和人工整理时参考的示例、工作台文档。
+- `versions/`：仅存放各迭代实际产物，如测试用例、简约版测试点、缺陷 Excel、现网验证清单、最终报告等。
+- `scripts/`：存放跨迭代复用的自动化脚本，默认优先引用 `docs/templates/` 中的模板文件。
 
 ---
 

@@ -1,6 +1,6 @@
 """生成国内 viaim 迭代测试报告 .docx
 
-以 630版本/测试报告_国内viaim_V6.3.0.docx 作为样式模板，结合：
+以 docs/templates/测试报告_国内viaim_V6.3.0.docx 作为样式模板，结合：
 - 缺陷 Excel（调用 parse_bugs 模块提取统计）
 - 简约版测试点 .md（解析为测试范围表）
 - 版本号 / 测试周期 / 参与人员 / 风险描述
@@ -34,7 +34,7 @@ from parse_bugs import load_bugs  # noqa: E402
 
 from docx import Document  # noqa: E402
 
-DEFAULT_TEMPLATE = '630版本/测试报告_国内viaim_V6.3.0.docx'
+DEFAULT_TEMPLATE = 'docs/templates/测试报告_国内viaim_V6.3.0.docx'
 
 SEVERITIES = ['致命', '严重', '一般', '轻微']
 STATUSES   = ['暂不修复', '待修复', '已闭环']
